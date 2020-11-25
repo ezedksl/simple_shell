@@ -42,7 +42,7 @@ char *_getenv(char *name)
 			{
 				free(path);
 				perror("Can't allocate memory (env)");
-				return (-1);
+				return (NULL);
 			}
 			_strcpy(path, aux + (_strlen(name) + 1));
 			return (path);

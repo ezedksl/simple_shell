@@ -10,7 +10,7 @@ char **command(char **argv)
 {
 	char *path = NULL, *token = NULL, *concat = NULL;
 	struct stat st;
-	int sizeargv = 0, sizetokpath = 0, size = 0;
+	int size = 0;
 
 	if (stat(argv[0], &st) == 0)
 		return (argv);
