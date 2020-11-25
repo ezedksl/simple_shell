@@ -18,7 +18,7 @@ char **command(char **argv)
 	token = strtok(path, ":");
 	while (token)
 	{
-		size = _strlen(argv[0] + _strlen(token));
+		size = _strlen(argv[0]) + _strlen(token);
 		concat = malloc(sizeof(char) * (size + 2));
 		if (concat == NULL)
 		{
