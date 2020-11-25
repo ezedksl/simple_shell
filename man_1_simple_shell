@@ -1,4 +1,4 @@
-.TH BIVALVE 1  "November 2020" "Holberton School" "0x16. C - Simple_Shell"
+.TH BIVALVE 1  "November 2020" "1.0" "Holberton School - Simple_Shell"
 
 .SH NAME
 .B Bivalve Shell (hsh)
