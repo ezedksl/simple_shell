@@ -2,7 +2,9 @@
 
 /**
   * tokpath - Tokenize path
-  *
+  * @words: array of array
+  * @path: path
+  * Return: words
   */
 
 char **tokpath(char **words, char *path)
