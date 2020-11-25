@@ -21,7 +21,7 @@ int exec(char **argv, char *line)
 			perror("Can't execute: ");
 		free(line);
 		freeargv(argv);
-		exit(0);
+		_exit(0);
 	}
 	else if (forkpid == -1)
 	{
