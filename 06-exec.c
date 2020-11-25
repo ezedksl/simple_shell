@@ -18,7 +18,7 @@ int exec(char **argv, char *line)
 	if (forkpid == 0)
 	{
 		if (execve(argv[0], argv, NULL) == -1)
-			perror("Can't execute: ");
+			perror(argv[0]);
 		free(line);
 		freeargv(argv);
 		_exit(0);
