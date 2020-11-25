@@ -11,7 +11,6 @@
 
 extern char **environ;
 
-char **tokpath(char **words, char *path);
 int linecheck(char *line);
 char *_strstr(char *haystack, char *needle);
 int _strcmp(char *s1, char *s2);

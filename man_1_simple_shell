@@ -14,7 +14,7 @@
 .B
 .SH DESCRIPTION
 The Bivalve shell is a command that reads lines from the terminal, interprets them, and generally executes other commands. It is the \
-program that is running when a user logs into the system. The shell implements a language \
+program that is running when a user logs into the system. The shell implements a language \ 
 that has flow control contructs, a macro facility that provides a variety of features in addition to data\storage, along with the built in history and line editing capabilities. It also has features to \
 aid interactive use and has the advantage that the interpretative language is common to both interactive\ and non-interactive use (shell scripts).
 
@@ -38,7 +38,7 @@ The Bivalve shell takes commands from files, shell scripts and user input in bot
 .SH INITIALIZATION
 To use the Bivalve shell the user needs to compile \
 using: gcc. Then run the output file by calling it whether \
-by the output name it was given.
+by the output name it was given. 
 .PP
 .B EX: $ ./some_name or $ a./a.out.\
 .PP
@@ -53,7 +53,7 @@ function and execute said commands. An example of non-interactive mode input:
 .B $ echo 'ls -a' | ./hsh
 .PP
 .PP
-.RE
+.RE 
 .SH Another example of non interactive mode:
 .PP
 .B $ cat some_file | ./hsh

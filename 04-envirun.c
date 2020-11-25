@@ -29,7 +29,7 @@ void _printenv(void)
 
 char *_getenv(char *name)
 {
-	char *aux, *env;
+	char *aux, *path;
 	int i;
 
 	for (i = 0; environ[i] != NULL; i++)
@@ -37,22 +37,15 @@ char *_getenv(char *name)
 		aux = _strstr(environ[i], name);
 		if (aux != NULL)
 		{
-			env = malloc(_strlen(environ[i]) - _strlen(name));
-			if (env == NULL)
+			path = malloc(_strlen(environ[i]) - _strlen(name));
+			if (path == NULL)
 			{
-				free(env);
-				perror("Mem alloc failure");
+				free(path);
+				perror("Can't allocate memory (env)");
 				return (NULL);
 			}
-			if (aux[(_strlen(name))] == '=')
-				_strcpy(env, aux + (_strlen(name) + 1));
-			else
-			{
-				free(env);
-				perror("env not found");
-				return (NULL);
-			}
-			return (env);
+			_strcpy(path, aux + (_strlen(name) + 1));
+			return (path);
 		}
 	}
 	return (NULL);
