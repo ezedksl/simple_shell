@@ -2,7 +2,8 @@
 /**
   * main - Prints the prompt in a loop and calls
   * the functions to get an input line and handle the parameters
-  *
+  * @argc: argument count on command line.
+  * @argv: arguments passen on command line.
   * Return: 0
   */
 

@@ -4,7 +4,8 @@
   * exec - Receives an splitted line of strings
   * and executes the program and it's arguments
   *
-  * @argv: A splitted line in tokens
+  * @words: A splitted line in tokens
+  * @argv: argv description.
   * @line: The 'line' pointer (used to free)
   * Return: 0
   */

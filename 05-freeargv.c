@@ -2,7 +2,7 @@
 
 /**
   * freeargv - Function to free argv (splitted tokens grid)
-  * @argv: Splitted tokens double array
+  * @words: Splitted tokens double array
   * Return: void
   */
 void freeargv(char **words)
@@ -15,4 +15,3 @@ void freeargv(char **words)
 	}
 	free(words);
 }
-
