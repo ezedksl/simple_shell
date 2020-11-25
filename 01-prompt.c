@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 		if (checkl == '\n')
 			continue;
 		else if (checkl == -1)
-			break;
+			exit(0);
 		else if (checkl == 1)
 			continue;
 		words = tokenize(line);
