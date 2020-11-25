@@ -18,7 +18,7 @@ int _strlen(const char *s);
 char **tokenize(char *line);
 char *_strcpy(char *dest, const char *src);
 void freeargv(char **argv);
-int exec(char **argv, char *line);
+int exec(char **words, char **argv, char *line);
 void _printenv(void);
 char *_getenv(char *var);
 int _strncmp(char *s1, char *s2, int n);

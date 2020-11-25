@@ -5,14 +5,14 @@
   * @argv: Splitted tokens double array
   * Return: void
   */
-void freeargv(char **argv)
+void freeargv(char **words)
 {
 	int i;
 
-	for (i = 0; argv[i] != NULL; i++)
+	for (i = 0; words[i] != NULL; i++)
 	{
-		free(argv[i]);
+		free(words[i]);
 	}
-	free(argv);
+	free(words);
 }
 

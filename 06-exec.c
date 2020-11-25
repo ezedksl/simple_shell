@@ -9,7 +9,7 @@
   * Return: 0
   */
 
-int exec(char **argv, char *line)
+int exec(char **words, char **argv, char *line)
 {
 	pid_t forkpid;
 	int status;
@@ -17,24 +17,24 @@ int exec(char **argv, char *line)
 	forkpid = fork();
 	if (forkpid == 0)
 	{
-		if (execve(argv[0], argv, NULL) == -1)
+		if (execve(words[0], words, NULL) == -1)
 			perror(argv[0]);
 		free(line);
-		freeargv(argv);
+		freeargv(words);
 		_exit(0);
 	}
 	else if (forkpid == -1)
 	{
 		perror("Can't create child process");
 		free(line);
-		freeargv(argv);
+		freeargv(words);
 		_exit(-1);
 	}
 	else
 	{
 		wait(&status);
 	}
-	freeargv(argv);
+	freeargv(words);
 	free(line);
 	return (0);
 }

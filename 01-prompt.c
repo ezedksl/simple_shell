@@ -6,12 +6,13 @@
   * Return: 0
   */
 
-int main(void)
+int main(int argc, char **argv)
 {
 	int getlineRet = 0, flag = 0, checkl = 0;
 	size_t linebuf = 0;
-	char **argv = NULL, *line = NULL;
+	char **words = NULL, *line = NULL;
 
+	(void)argc;
 	while (1)
 	{
 		line = NULL;
@@ -35,9 +36,9 @@ int main(void)
 			break;
 		else if (checkl == 1)
 			continue;
-		argv = tokenize(line);
-		argv = command(argv);
-		exec(argv, line);
+		words = tokenize(line);
+		words = command(words);
+		exec(words, argv, line);
 	}
 	return (0);
 }

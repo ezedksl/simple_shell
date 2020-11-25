@@ -9,6 +9,19 @@
 
 int linecheck(char *line)
 {
+	int y = 0, x = 0;
+
+	for (x = 0; line[x] != '\0'; x++)
+	{
+		if (line[x] >= 33 && line[x] <= 126)
+			y++;
+	}
+	if (y == 0)
+	{
+		free(line);
+		return ('\n');
+	}
+
 	if (line[0] == '\n')
 	{
 		free(line);

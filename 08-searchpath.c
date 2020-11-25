@@ -3,22 +3,22 @@
 /**
  * command - entry point
  * @argv: arguments passed to the function
- * Return: argv
+ * Return: words
  */
 
-char **command(char **argv)
+char **command(char **words)
 {
 	char *path = NULL, *token = NULL, *concat = NULL;
 	struct stat st;
 	int size = 0;
 
-	if (stat(argv[0], &st) == 0)
-		return (argv);
+	if (stat(words[0], &st) == 0)
+		return (words);
 	path = _getenv("PATH");
 	token = strtok(path, ":");
 	while (token)
 	{
-		size = _strlen(argv[0]) + _strlen(token);
+		size = _strlen(words[0]) + _strlen(token);
 		concat = malloc(sizeof(char) * (size + 2));
 		if (concat == NULL)
 		{
@@ -27,25 +27,25 @@ char **command(char **argv)
 		}
 		concat = _strcpy(concat, token);
 		concat = _strcat(concat, "/");
-		concat = _strcat(concat, argv[0]);
+		concat = _strcat(concat, words[0]);
 		if (stat(concat, &st) == 0)
 		{
-			free(argv[0]);
+			free(words[0]);
 			size = _strlen(concat);
-			argv[0] = malloc(sizeof(char) * size + 1);
-			if (argv[0] == NULL)
+			words[0] = malloc(sizeof(char) * size + 1);
+			if (words[0] == NULL)
 			{
-				free(argv[0]);
+				free(words[0]);
 				return (NULL);
 			}
-			argv[0] = _strcpy(argv[0], concat);
+			words[0] = _strcpy(words[0], concat);
 			free(concat);
 			free(path);
-			return (argv);
+			return (words);
 		}
 		token = strtok(NULL, ":");
 		free(concat);
 	}
 	free(path);
-	return (argv);
+	return (words);
 }

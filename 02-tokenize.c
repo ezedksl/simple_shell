@@ -23,6 +23,11 @@ char **tokenize(char *line)
 	i = _strlen(line);
 	line[i - 1] = '\0';
 	token = strtok(line, " ");
+	if (token == NULL)
+	{
+		return (words);
+	}
+
 	while (token != NULL)
 	{
 		toksize = _strlen(token);
