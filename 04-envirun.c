@@ -38,6 +38,12 @@ char *_getenv(char *name)
 		if (aux != NULL)
 		{
 			path = malloc(_strlen(environ[i]) - _strlen(name));
+			if (path == NULL)
+			{
+				free(path);
+				perror("Can't allocate memory (env)");
+				return (-1);
+			}
 			_strcpy(path, aux + (_strlen(name) + 1));
 			return (path);
 		}

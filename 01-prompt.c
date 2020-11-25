@@ -8,9 +8,9 @@
 
 int main(void)
 {
-	int getlineRet, flag = 0, checkl = 0;
+	int getlineRet = 0, flag = 0, checkl = 0;
 	size_t linebuf = 0;
-	char **argv = NULL, *line;
+	char **argv = NULL, *line = NULL;
 
 	while (1)
 	{
@@ -21,7 +21,7 @@ int main(void)
 			write(STDOUT_FILENO, "$ ", 2);
 		}
 		getlineRet = getline(&line, &linebuf, stdin);
-		if (getlineRet == EOF)
+		if (getlineRet == EOF || getlineRet == -1)
 		{
 			free(line);
 			if (flag == 1)

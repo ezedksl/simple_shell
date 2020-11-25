@@ -28,7 +28,7 @@ int exec(char **argv, char *line)
 		perror("Can't create child process");
 		free(line);
 		freeargv(argv);
-		exit(EXIT_FAILURE);
+		_exit(-1);
 	}
 	else
 	{

@@ -14,6 +14,12 @@ char **tokenize(char *line)
 	char *token = NULL;
 	int tkount = 0, toksize = 0, i;
 
+	if (words == NULL)
+	{
+		free(words);
+		perror("Could not allocate memory for argv");
+		return (-1);
+	}
 	i = _strlen(line);
 	line[i - 1] = '\0';
 	token = strtok(line, " ");
@@ -21,6 +27,12 @@ char **tokenize(char *line)
 	{
 		toksize = _strlen(token);
 		words[tkount] = malloc(toksize + 1);
+		if (words[tkount] == NULL)
+		{
+			free(words[tkount]);
+			perror("Can't allocate memory");
+			return (-1);
+		}
 		_strcpy(words[tkount], token);
 		token = strtok(NULL, " ");
 		tkount++;
