@@ -9,6 +9,7 @@
 
 int main(int argc, char **argv)
 {
+	struct stat st;
 	int getlineRet = 0, flag = 0, checkl = 0;
 	size_t linebuf = 0;
 	char **words = NULL, *line = NULL;
@@ -31,14 +32,19 @@ int main(int argc, char **argv)
 			break;
 		}
 		checkl = linecheck(line);
-		if (checkl == '\n')
+		if (checkl == '\n' || checkl == 1)
 			continue;
 		else if (checkl == -1)
 			exit(0);
-		else if (checkl == 1)
-			continue;
 		words = tokenize(line);
 		words = command(words);
+		if (stat(words[0], &st) == -1)
+		{
+			perror(argv[0]);
+			free(line);
+			freeargv(words);
+			continue;
+		}
 		exec(words, argv, line);
 	}
 	return (0);
