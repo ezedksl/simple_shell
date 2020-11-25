@@ -45,17 +45,13 @@ char *_getenv(char *name)
 				return (NULL);
 			}
 			if (aux[(_strlen(name))] == '=')
-			{
-				printf("bueno creo q esta bien\n");
 				_strcpy(env, aux + (_strlen(name) + 1));
-			}
 			else
 			{
 				free(env);
 				perror("env not found");
 				return (NULL);
 			}
-			printf("env is: %s\n", env);
 			return (env);
 		}
 	}
