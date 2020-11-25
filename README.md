@@ -111,7 +111,18 @@ If either of the above searches was successful, the shell executes the named pro
 
 ![Alt](shell.svg)
 
-### Bibalve Builtin Commands.
+| File Name | Description and contents |
+| --- | --- |
+| [manpage](man_1_simple_shell) | This is the manpage for the Bivalve shell, this will help us know how to use the shell and the many uses of it, in here we can find examples and the correct sintaxis of the commands.|
+| [shell.h](shell.h) |This is the header file where we can find all the prototypes of our functions.|
+| [01-prompt.c](01-prompt.c) |main function - Prints the prompt in a loop and calls the functions to get an input line and handle the parameters.|
+| [02-tokenize.c](02-tokenize.c) |tokenize - Receives a line as an input and stores space separated tokens (strings)|
+| [03-strfunctions.c](03-strfunctions.c) |_strcmp, _strcpy, _strlen and _strncmp. These customized str functions compare, copy and return the length of strings.|
+| [04-envirun.c](04-envirun.c) |_printenv, _getenv. These customized functions print thr 'env' command and get an enviromental variable.|
+| [05-freeargv.c](05-freeargv.c) |Function to free argv (splitted tokens grid).|
+| [06-exec.c](06-exec.c) |Receives an splitted line of strings and executes the program and it's arguments.|
+| [07-linecheck.c](07-linecheck.c) |Previous line check.|
+| [08-searchpath.c](08-searchpath.c) |Checks if command exists as builtin or tokenizes $PATH to find executable file.|
 
 
 ## Authors
