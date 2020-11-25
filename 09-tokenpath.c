@@ -1,21 +1,16 @@
 #include "shell.h"
 
 /**
- * command - entry point
- * @argv: arguments passed to the function
- * Return: words
- */
+  * tokpath - Tokenize path
+  *
+  */
 
-char **command(char **words)
+char **tokpath(char **words, char *path)
 {
+	char *token = NULL, *concat = NULL;
 	struct stat st;
-	char *path = NULL;
+	int size = 0;
 
-	if (stat(words[0], &st) == 0)
-		return (words);
-	path = _getenv("PATH");
-	words = tokpath(words, path);
-	/*
 	token = strtok(path, ":");
 	while (token)
 	{
@@ -48,6 +43,5 @@ char **command(char **words)
 		free(concat);
 	}
 	free(path);
-	*/
 	return (words);
 }
