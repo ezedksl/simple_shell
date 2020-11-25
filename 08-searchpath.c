@@ -2,7 +2,7 @@
 
 /**
  * command - entry point
- * @argv: arguments passed to the function
+ * @words: arguments passed to the function
  * Return: words
  */
 

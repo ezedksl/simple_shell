@@ -58,13 +58,13 @@ A simple UNIX command interpreter written as final project of the first trimeste
 - ```wait4```
 - ```write```
 
-### Execution
+### Compilation and Execution
 
 To execute **Bibalve**, compile all `.c` files in the repository and execute the resulting executable file:
 
 ```
-gcc *.c -o Bibalve
-./Bibalve
+gcc *.c -o hsh
+./hsh
 ```
 _Note_: there are two ways of using the command interpreter:
 
@@ -113,7 +113,7 @@ If either of the above searches was successful, the shell executes the named pro
 
 | File Name | Description and contents |
 | --- | --- |
-| [manpage](man_1_simple_shell) | This is the manpage for the Bivalve shell, this will help us know how to use the shell and the many uses of it, in here we can find examples and the correct sintaxis of the commands.|
+| [man_1_simple_shell](man_1_simple_shell) | This is the manpage for the Bivalve shell, this will help us know how to use the shell and the many uses of it, in here we can find examples and the correct sintaxis of the commands.|
 | [shell.h](shell.h) |This is the header file where we can find all the prototypes of our functions.|
 | [01-prompt.c](01-prompt.c) |main function - Prints the prompt in a loop and calls the functions to get an input line and handle the parameters.|
 | [02-tokenize.c](02-tokenize.c) |tokenize - Receives a line as an input and stores space separated tokens (strings)|
