@@ -25,6 +25,5 @@ int _strncmp(char *s1, char *s2, int n);
 char *_getline(FILE *fp);
 char **command(char **argv);
 char *_strcat(char *dest, char *src);
-char *concatenar(char *concat, char **words, char *token);
 
 #endif

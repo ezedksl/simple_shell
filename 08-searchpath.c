@@ -18,6 +18,16 @@ char **command(char **words)
 	token = strtok(path, ":");
 	while (token)
 	{
+		size = _strlen(words[0]) + _strlen(token);
+		concat = malloc(sizeof(char) * (size + 2));
+		if (concat == NULL)
+		{
+			free(concat);
+			return (NULL);
+		}
+		concat = _strcpy(concat, token);
+		concat = _strcat(concat, "/");
+		concat = _strcat(concat, words[0]);
 		if (stat(concat, &st) == 0)
 		{
 			free(words[0]);
@@ -33,37 +43,9 @@ char **command(char **words)
 			free(path);
 			return (words);
 		}
-		else
-		{
-			token = strtok(NULL, ":");
-			free(concat);
-		}
+		token = strtok(NULL, ":");
+		free(concat);
 	}
 	free(path);
 	return (words);
-}
-
-/**
-  * concatenar - Concatenate path token and command to save into the argv0
-  * @concat: string
-  * @words: double array
-  * @token: current path token
-  * Return: concatenated string
-  */
-
-char *concatenar(char *concat, char **words, char *token)
-{
-	int size;
-
-	size = _strlen(words[0]) + _strlen(token);
-	concat = malloc(sizeof(char) * (size + 2));
-	if (concat == NULL)
-	{
-		free(concat);
-		return (NULL);
-	}
-	concat = _strcpy(concat, token);
-	concat = _strcat(concat, "/");
-	concat = _strcat(concat, words[0]);
-	return (concat);
 }
