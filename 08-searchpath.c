@@ -39,13 +39,13 @@ char **command(char **words)
 				return (NULL);
 			}
 			words[0] = _strcpy(words[0], concat);
-			free(concat), free(path);
+			free(concat);
+			free(path);
 			return (words);
 		}
 		free(concat);
 		token = strtok(NULL, ":");
 	}
 	free(path);
-	exit(127);
-	return (NULL);
+	return (words);
 }
