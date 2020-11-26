@@ -26,7 +26,7 @@ int exec(char **words, char **argv, char *line)
 	}
 	else if (forkpid == -1)
 	{
-		perror("Can't create child process");
+		perror(argv[0]);
 		free(line);
 		freeargv(words);
 		_exit(-1);

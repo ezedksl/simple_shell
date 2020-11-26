@@ -45,7 +45,8 @@ int main(int argc, char **argv)
 			freeargv(words);
 			continue;
 		}
-		exec(words, argv, line);
+		else
+			exec(words, argv, line);
 	}
 	return (0);
 }
