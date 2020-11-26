@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 		words = command(words);
 		if (stat(words[0], &st) == -1)
 		{
-			perror(argv[0]);
+			displayerror(argv[0], words[0]);
 			free(line);
 			freeargv(words);
 			continue;
@@ -49,4 +49,21 @@ int main(int argc, char **argv)
 			exec(words, argv, line);
 	}
 	return (0);
+}
+/**
+  * displayerror - display error
+  * @name: file name
+  * @word: command
+  * Return: void
+  */
+void displayerror(char *name, char *word)
+{
+	size_t len, len2;
+
+	len = _strlen(name);
+	len2 = _strlen(word);
+	write(STDERR_FILENO, name, len);
+	write(STDERR_FILENO, ": 1: ", 5);
+	write(STDERR_FILENO, word, len2);
+	write(STDERR_FILENO, ": not found\n", 12);
 }

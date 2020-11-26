@@ -26,5 +26,6 @@ int _strncmp(char *s1, char *s2, int n);
 char *_getline(FILE *fp);
 char **command(char **argv);
 char *_strcat(char *dest, char *src);
+void displayerror(char *name, char *word);
 
 #endif
